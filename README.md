@@ -1,4 +1,4 @@
-# API Template (.NET 8)
+# Telegram.Webhook (.NET 8)
 
 ## Overview
 
@@ -35,7 +35,7 @@ This template provides a clean architecture for building robust .NET 8 Web APIs.
 
 3. **Update the connection string**
 
-   * Open `API.Template.WebAPI/appsettings.json` and set your SQL Server connection string under `ConnectionStrings:DbConnectionString`.
+   * Open `Telegram.Webhook.WebAPI/appsettings.json` and set your SQL Server connection string under `ConnectionStrings:DbConnectionString`.
 
 4. **(Optional) Rename the template placeholders**
    If you want to replace all `Template` identifiers with your own project name, run the renaming script:
@@ -58,7 +58,7 @@ This template provides a clean architecture for building robust .NET 8 Web APIs.
 6. **Run the application**
 
    ```bash
-   dotnet run --project API.Template.WebAPI
+   dotnet run --project Telegram.Webhook.WebAPI
    ```
 
 7. **Access Swagger UI**
