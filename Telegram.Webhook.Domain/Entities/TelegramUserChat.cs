@@ -7,7 +7,7 @@ public sealed class TelegramUserChat
     public string? PhoneNumber { get; set; }
     public string? Username { get; set; }
     public string? FirstName { get; set; }
-    public DateTime CreationDateTime { get; set; }
-    public DateTime LastSeenDateTime { get; set; }
-    public bool IsActive { get; set; }
+    public DateTime CreationDateTime { get; init; }
+    public DateTime LastSeenDateTime { get; init; }
+    public bool IsActive { get; init; }
 }

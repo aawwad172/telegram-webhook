@@ -1,10 +1,10 @@
 ﻿using System.Data;
-using Telegram.Webhook.Domain.Interfaces.Infrastructure;
-using Telegram.Webhook.Domain.Settings;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Options;
+using Telegram.Webhook.Domain.Interfaces.Infrastructure;
+using Telegram.Webhook.Domain.Settings;
 
-namespace Telegram.API.Infrastructure.Persistence;
+namespace Telegram.Webhook.Infrastructure.Persistence;
 
 public class DbConnectionFactory(IOptionsMonitor<DbSettings> options) : IDbConnectionFactory
 {

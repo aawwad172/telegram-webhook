@@ -3,7 +3,7 @@ namespace Telegram.Webhook.Domain.Interfaces.Infrastructure.Repositories;
 public interface ITelegramUserChatsRepository
 {
     /// <summary>
-    /// Insert a new chat or update it if it already exists.
+    /// Add a new Telegram user chat mapping, that is, a user that has started a chat with the bot.
     /// </summary>
     Task AddAsync(
         int botId,

@@ -3,7 +3,7 @@ using System.Data;
 using Telegram.Webhook.Domain.Interfaces.Infrastructure;
 using Telegram.Webhook.Domain.Interfaces.Infrastructure.Repositories;
 
-namespace Telegram.API.Infrastructure.Persistence.Repositories;
+namespace Telegram.Webhook.Infrastructure.Persistence.Repositories;
 
 public class TelegramUserChatsRepository(IDbConnectionFactory dbFactory) : ITelegramUserChatsRepository
 {

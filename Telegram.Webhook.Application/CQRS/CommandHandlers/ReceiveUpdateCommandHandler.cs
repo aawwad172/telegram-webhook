@@ -71,7 +71,7 @@ public class ReceiveUpdateCommandHandler(
             );
 
 
-            string token = _authenticationService.Decrypt(bot.EncryptedBotKey, cancellationToken);
+            string token = _authenticationService.Decrypt(bot.EncryptedBotKey);
             await _telegramClient.SendTextAsync(
                token,
                chatId,
@@ -102,7 +102,7 @@ public class ReceiveUpdateCommandHandler(
             );
 
 
-            string token = _authenticationService.Decrypt(bot.EncryptedBotKey, cancellationToken);
+            string token = _authenticationService.Decrypt(bot.EncryptedBotKey);
             // ✅ Send ReplyKeyboardMarkup with a contact button
             await _telegramClient.SendTextAsync(
                 token,

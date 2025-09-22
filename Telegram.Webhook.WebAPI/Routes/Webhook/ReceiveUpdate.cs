@@ -41,7 +41,7 @@ public class ReceiveUpdate
         }
 
         // 3) Build command and validate (all input checks live here)
-        ReceiveUpdateCommand command = new(PublicId: publicId!, SecretToken: secretToken, Update: update!);
+        ReceiveUpdateCommand command = new(PublicId: publicId, SecretToken: secretToken, Update: update);
 
         ValidationResult validationResult = await validator.ValidateAsync(command, cancellationToken);
         if (!validationResult.IsValid)

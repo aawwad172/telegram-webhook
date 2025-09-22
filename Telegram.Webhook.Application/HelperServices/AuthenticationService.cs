@@ -6,9 +6,9 @@ namespace Telegram.Webhook.Application.HelperServices;
 
 public class AuthenticationService : IAuthenticationService
 {
-    public string Decrypt(string encryptedBotKey, CancellationToken cancellationToken = default)
+    public string Decrypt(string encryptedBotKey)
         => EncrLib.Decrypt(encryptedBotKey);
 
-    public string Encrypt(string botKey, CancellationToken cancellationToken = default)
+    public string Encrypt(string botKey)
         => EncrLib.Encrypt(botKey);
 }
