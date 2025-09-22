@@ -15,7 +15,7 @@ if [ "$#" -ne 1 ]; then
   exit 1
 fi
 
-OLD="API.Template"
+OLD="Telegram.Webhook"
 NEW="$1"
 
 echo "Replacing '$OLD' with '$NEW' throughout the project..."
