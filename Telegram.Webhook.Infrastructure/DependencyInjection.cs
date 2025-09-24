@@ -24,7 +24,7 @@ public static class DependencyInjection
 
         services.AddTransient<DbConnectionHealthCheck>();
         services.AddTransient<IBotRepository, BotRepository>();
-        services.AddTransient<ITelegramUserChatsRepository, TelegramUserChatsRepository>();
+        services.AddTransient<IRecipientRepository, RecipientRepository>();
 
         services.AddOptions<TelegramOptions>()
         .Bind(configuration.GetRequiredSection(nameof(TelegramOptions)))
@@ -35,7 +35,7 @@ public static class DependencyInjection
         {
             TelegramOptions opts = serviceProvider.GetRequiredService<IOptionsMonitor<TelegramOptions>>().CurrentValue;
 
-            if(opts.TelegramApiBaseUrl is null)
+            if (opts.TelegramApiBaseUrl is null)
             {
                 throw new ArgumentNullException("Telegram Api Base URL is empty");
             }

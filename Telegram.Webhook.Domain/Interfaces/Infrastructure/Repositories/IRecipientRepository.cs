@@ -1,6 +1,6 @@
 namespace Telegram.Webhook.Domain.Interfaces.Infrastructure.Repositories;
 
-public interface ITelegramUserChatsRepository
+public interface IRecipientRepository
 {
     /// <summary>
     /// Add a new Telegram user chat mapping, that is, a user that has started a chat with the bot.
