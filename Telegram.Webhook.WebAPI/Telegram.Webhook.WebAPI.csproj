@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Telegram.Webhook.WebAPI</RootNamespace>
+    <UserSecretsId>b3323ce4-97b4-4531-81d2-8bd98635fc06</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

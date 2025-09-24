@@ -5,7 +5,7 @@ using Telegram.Webhook.Domain.Interfaces.Infrastructure.Repositories;
 
 namespace Telegram.Webhook.Infrastructure.Persistence.Repositories;
 
-public class TelegramUserChatsRepository(IDbConnectionFactory dbFactory) : ITelegramUserChatsRepository
+public class RecipientRepository(IDbConnectionFactory dbFactory) : IRecipientRepository
 {
     private readonly IDbConnectionFactory _dbFactory = dbFactory;
     public async Task AddAsync(

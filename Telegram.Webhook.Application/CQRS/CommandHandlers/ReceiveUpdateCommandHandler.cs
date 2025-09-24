@@ -11,13 +11,13 @@ namespace Telegram.Webhook.Application.CQRS.CommandHandlers;
 
 public class ReceiveUpdateCommandHandler(
     IBotRepository botRepository,
-    ITelegramUserChatsRepository userChatsRepository,
+    IRecipientRepository recipientRepository,
     ITelegramClient telegramClient,
     IAuthenticationService authenticationService)
     : IRequestHandler<ReceiveUpdateCommand, ReceiveUpdateCommandResult>
 {
     private readonly IBotRepository _botRepository = botRepository;
-    private readonly ITelegramUserChatsRepository _chatsRepository = userChatsRepository;
+    private readonly IRecipientRepository _recipientRepository = recipientRepository;
     private readonly ITelegramClient _telegramClient = telegramClient;
     private readonly IAuthenticationService _authenticationService = authenticationService;
     public async Task<ReceiveUpdateCommandResult> Handle(ReceiveUpdateCommand request, CancellationToken cancellationToken)
@@ -59,7 +59,7 @@ public class ReceiveUpdateCommandHandler(
             if (!string.IsNullOrWhiteSpace(phone) && CommandSanitizerHelpers.TryNormalizePhoneNumber(phone!, out string? normalized))
                 phone = normalized;
 
-            await _chatsRepository.AddAsync(
+            await _recipientRepository.AddAsync(
                 botId: bot.BotId,
                 chatId: chatId,
                 phoneNumber: phone,
@@ -90,7 +90,7 @@ public class ReceiveUpdateCommandHandler(
         // 2) /start → create/update row, prompt for phone
         if (isStart)
         {
-            await _chatsRepository.AddAsync(
+            await _recipientRepository.AddAsync(
                 botId: bot.BotId,
                 chatId: chatId,
                 phoneNumber: null,                 // none yet
