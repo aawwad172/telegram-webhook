@@ -22,7 +22,7 @@ public class RecipientRepository(IDbConnectionFactory dbFactory) : IRecipientRep
         using SqlCommand cmd = (SqlCommand)conn.CreateCommand();
 
         cmd.CommandType = CommandType.StoredProcedure;
-        cmd.CommandText = "usp_TelegramUserChats_Upsert";
+        cmd.CommandText = "usp_Recipient_Upsert";
         cmd.CommandTimeout = 30;
 
         cmd.Parameters.Add(new SqlParameter("@BotId", SqlDbType.Int) { Value = botId });

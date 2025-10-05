@@ -29,7 +29,8 @@ public class BotRepository(IDbConnectionFactory dbConnectionFactory) : IBotRepos
         // map
         return new Bot
         {
-            BotId = reader.GetInt32(reader.GetOrdinal("BotId")),
+            Id = reader.GetInt32(reader.GetOrdinal("Id")),
+            Name = reader.GetString(reader.GetOrdinal("Name")),
             CustomerId = reader.GetInt32(reader.GetOrdinal("CustomerId")),
             EncryptedBotKey = reader.GetString(reader.GetOrdinal("EncryptedBotKey")),
             PublicId = reader.GetString(reader.GetOrdinal("PublicId")),

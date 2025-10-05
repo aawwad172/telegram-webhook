@@ -23,7 +23,7 @@ public class ReceiveUpdateCommandHandler(
     public async Task<ReceiveUpdateCommandResult> Handle(ReceiveUpdateCommand request, CancellationToken cancellationToken)
     {
         // 1) Resolve bot by PublicId
-        Bot? bot = await _botRepository.GetByPublicIdAsync(request.PublicId, cancellationToken)
+        Bot? bot = await _botRepository.GetByPublicIdAsync(request.PublicId!, cancellationToken)
                   ?? throw new NotFoundException("Bot not found for publicId");
 
         // 2) Validate secret if configured
@@ -60,7 +60,7 @@ public class ReceiveUpdateCommandHandler(
                 phone = normalized;
 
             await _recipientRepository.AddAsync(
-                botId: bot.BotId,
+                botId: bot.Id,
                 chatId: chatId,
                 phoneNumber: phone,
                 telegramUserId: tgUserId,
@@ -91,7 +91,7 @@ public class ReceiveUpdateCommandHandler(
         if (isStart)
         {
             await _recipientRepository.AddAsync(
-                botId: bot.BotId,
+                botId: bot.Id,
                 chatId: chatId,
                 phoneNumber: null,                 // none yet
                 telegramUserId: tgUserId,
